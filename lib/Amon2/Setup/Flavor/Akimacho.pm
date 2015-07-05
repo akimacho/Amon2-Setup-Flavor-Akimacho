@@ -17,14 +17,13 @@ sub run {
     $self->render_file( "tmpl/index.tx",          "Akimacho/tmpl/index.tx" );
     $self->render_file( "tmpl/include/layout.tx", "Basic/tmpl/include/layout.tx" );
     $self->render_file( 'lib/<<PATH>>.pm',                   "Akimacho/lib/__PATH__.pm" );
-    $self->render_file( 'lib/<<PATH>>.pm',                   "Akimacho/lib/__PATH__/Model.pm" );
-    $self->render_file( 'lib/<<PATH>>.pm',                   "Akimacho/lib/__PATH__/Web.pm" );
-    $self->render_file( 'lib/<<PATH>>.pm',                   "Akimacho/lib/__PATH__/Dipatcher.pm" );
-    $self->render_file( 'lib/<<PATH>>.pm',                   "Akimacho/lib/__PATH__/C/Root.pm" );
+    $self->render_file( 'lib/<<PATH>>/Model.pm',                   "Akimacho/lib/__PATH__/Model.pm" );
+    $self->render_file( 'lib/<<PATH>>/Web.pm',                   "Akimacho/lib/__PATH__/Web.pm" );
+    $self->render_file( 'lib/<<PATH>>/Dispatcher.pm',                   "Akimacho/lib/__PATH__/Web/Dipatcher.pm" );
+    $self->render_file( 'lib/<<PATH>>/Web/C/Root.pm',                   "Akimacho/lib/__PATH__/Web/C/Root.pm" );
     $self->render_file( 'lib/<<PATH>>/Web/Plugin/Session.pm','Basic/lib/__PATH__/Web/Plugin/Session.pm' );
     $self->render_file( 'lib/<<PATH>>/Web/View.pm',          'Minimum/lib/__PATH__/Web/View.pm' );
     $self->render_file( 'lib/<<PATH>>/Web/ViewFunctions.pm', 'Minimum/lib/__PATH__/Web/ViewFunctions.pm' );
-    
     $self->render_file( 'lib/<<PATH>>/DB.pm',                'Basic/lib/__PATH__/DB.pm' );
     $self->render_file( 'lib/<<PATH>>/DB/Schema.pm',         'Basic/lib/__PATH__/DB/Schema.pm' );
     $self->render_file( 'lib/<<PATH>>/DB/Row.pm',            'Basic/lib/__PATH__/DB/Row.pm' );
