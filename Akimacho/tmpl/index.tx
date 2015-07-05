@@ -1,0 +1,10 @@
+: cascade "include/layout.tx"
+
+: override content -> {
+
+<div class="entry">
+    <h1>記事のタイトル</h1>
+    <p>Hello, world!</p>
+</div>
+
+: }

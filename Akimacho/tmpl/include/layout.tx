@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title><: $title || '<%= $dist %>' :></title>
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+<meta name="format-detection" content="telephone=no" />
+<link href="<: static_file('/static/css/style.css') :>" rel="stylesheet" type="text/css" media="screen" />
+<script src="<: static_file('/static/js/script.js') :>"></script>
+<!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</haed>
+<body>
+<div class="header">
+    <h1><a href="#"><% $dist %></a></h1>
+    <p>キャッチフレーズ</p>
+</div><!-- /.container -->
+<div class="container">
+    <: block content -> { } :>
+</div><!-- /.container -->
+<div class="footer">
+    <p>Copyright &copy; <% $dist %></p>
+</div><!-- /.footer -->
+</body>
+</html>

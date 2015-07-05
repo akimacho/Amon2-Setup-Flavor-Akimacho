@@ -1,0 +1,60 @@
+/* header */
+.header {
+    padding: 20px;
+    background-color: #dfe3e8;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 20px;
+    line-height: 1;
+}
+
+.header h1 a {
+    color: #000;
+    text-decoration: none;
+}
+
+.header p {
+    margin: 8px 0 0 0;
+    font-size: 12px;
+    line-height: 1;
+}
+
+/* entry */
+.entry {
+    padding: 20px;
+    background-color: #dfe3e8;
+}
+
+.entry h1 {
+    margin: 0 0 20px 0;
+    font-size: 28px;
+    line-height: 1.2;
+}
+
+.entry p {
+    margin: 0 0 20px 0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* footer */
+.footer {
+    padding: 20px;
+    background-color: #dfe3e8;
+    text-align: center;
+}
+
+.footer p {
+    margin: 0 0 3px 0;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.footer a {
+    color: #666;
+    text-decoration: none;
+}
+
