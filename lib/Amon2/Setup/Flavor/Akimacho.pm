@@ -81,9 +81,15 @@ sub run {
         'lib/<<PATH>>/DB/Row.pm',
         'Basic/lib/__PATH__/DB/Row.pm'
     );
+    
+    # script
     $self->render_file(
         $self->psgi_file,
         'Basic/script/server.pl'
+    );
+    $self->render_file(
+        'script/' . lc($self->{dist}) . '-cli', 
+        'Akimacho/script/cli.pl'
     );
     $self->render_file(
         'Build.PL',
@@ -147,6 +153,7 @@ sub run {
         'sql/mysql.sql',
         'Basic/sql/mysql.sql'
     );
+    # test code
     $self->render_file(
         'sql/sqlite.sql',
         'Basic/sql/sqlite.sql'
@@ -170,6 +177,19 @@ sub run {
         {psgi_file => $self->psgi_file,}
     );
     $self->render_file(
+        't/03_assets.t', 
+        'Akimacho/t/03_assets.t',
+        {psgi_file => $self->psgi_file,},
+    );
+    $self->render_file(
+        't/04_jshint.t',
+        'Basic/t/06_jshint.t'
+    );
+    $self->render_file(
+        't/05_model.t', 
+        'Akimacho/t/05_model.t'
+    );
+    $self->render_file(
         'xt/01_pod.t',
         'Minimum/xt/01_pod.t'
     );
@@ -185,6 +205,8 @@ sub run {
         '.proverc',
         'Basic/dot.proverc'
     );
+    
+    # status code html
     {
         my %status = (
             '503' => 'Service Unavailable',
