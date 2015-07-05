@@ -3,19 +3,6 @@ use strict;
 use warnings;
 use Module::Build;
 
-my $class = Module::Build->subclass(code => <<'EOF');
-    sub ACTION_copy {
-        my $self = shift;
-        use FindBin;
-        use File::ShareDir qw/dist_dir/;
-        use File::Copy::Recursive qw/rcopy/;
-        my $source = "$FindBin::Bin" . "/Akimacho/";
-        my $path = dist_dir('Amon2') . '/flavor/Akimacho';
-        print "[copy]:\n from : $source\n to : $path\n";
-        rcopy($source, $path);
-    }
-EOF
-
 my %args = (
     module_name         => 'Amon2::Setup::Flavor::Akimacho',
     license             => 'artistic_2',
@@ -32,12 +19,11 @@ my %args = (
         #'ABC'              => 1.6,
         #'Foo::Bar::Module' => 5.0401,
     },
-    dist_abstract => 'Akimacho',
+    share_dir => 'share',
+    dist_abstract => 'share',
     add_to_cleanup     => [ 'Amon2-Setup-Flavor-Akimacho-*' ],
     create_makefile_pl => 'traditional',
 );
 
-my $builder = $class->new(%args);
-
-$builder->add_build_element('copy');
+my $builder = Module::Build->new(%args);
 $builder->create_build_script();
