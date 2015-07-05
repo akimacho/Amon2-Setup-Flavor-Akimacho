@@ -1,7 +1,7 @@
-Amon2-Setup-Flavor-Akimacho
+Amon2::Setup::Flavor::Akimacho - Amon2 flavor I use
 ====
 
-My Amon2 flavor
+This Amon2 flavor that akimacho uses
 
 ## Install
 
@@ -13,10 +13,20 @@ $ ./Build
 $ ./Build install
 ```
 
-## Setup
+## Uninstall
+
+To uninstall this module, run the following commands:
 
 ```
-$ amon2-setup --flavor=Akimacho MyApp
+$ cpanm -U Amon2::Setup::Flavor::Akimacho
+```
+
+## Usage
+
+To setup script for Amon2, run the following commands:
+
+```
+$ amon2-setup.pl --flavor=Akimacho MyApp
 ```
 
 ## Licence
