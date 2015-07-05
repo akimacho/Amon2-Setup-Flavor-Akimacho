@@ -11,15 +11,14 @@ our $VERSION = '0.01';
 
 sub run {
     my $self = shift;
-    
-    my Akimacho = dist_dir('Amon2');
+
     # write code.
     $self->render_file( "tmpl/index.tx",          "Akimacho/tmpl/index.tx" );
-    $self->render_file( "tmpl/include/layout.tx", "Basic/tmpl/include/layout.tx" );
+    $self->render_file( "tmpl/include/layout.tx", "Akimacho/tmpl/include/layout.tx" );
     $self->render_file( 'lib/<<PATH>>.pm',                   "Akimacho/lib/__PATH__.pm" );
     $self->render_file( 'lib/<<PATH>>/Model.pm',                   "Akimacho/lib/__PATH__/Model.pm" );
     $self->render_file( 'lib/<<PATH>>/Web.pm',                   "Akimacho/lib/__PATH__/Web.pm" );
-    $self->render_file( 'lib/<<PATH>>/Dispatcher.pm',                   "Akimacho/lib/__PATH__/Web/Dipatcher.pm" );
+    $self->render_file( 'lib/<<PATH>>/Web/Dispatcher.pm',                   "Akimacho/lib/__PATH__/Web/Dispatcher.pm" );
     $self->render_file( 'lib/<<PATH>>/Web/C/Root.pm',                   "Akimacho/lib/__PATH__/Web/C/Root.pm" );
     $self->render_file( 'lib/<<PATH>>/Web/Plugin/Session.pm','Basic/lib/__PATH__/Web/Plugin/Session.pm' );
     $self->render_file( 'lib/<<PATH>>/Web/View.pm',          'Minimum/lib/__PATH__/Web/View.pm' );
@@ -27,12 +26,12 @@ sub run {
     $self->render_file( 'lib/<<PATH>>/DB.pm',                'Basic/lib/__PATH__/DB.pm' );
     $self->render_file( 'lib/<<PATH>>/DB/Schema.pm',         'Basic/lib/__PATH__/DB/Schema.pm' );
     $self->render_file( 'lib/<<PATH>>/DB/Row.pm',            'Basic/lib/__PATH__/DB/Row.pm' );
-    
+
     $self->render_file( $self->psgi_file, 'Basic/script/server.pl' );
     $self->render_file( 'Build.PL', 'Minimum/Build.PL' );
     $self->render_file( 'minil.toml', 'Minimum/minil.toml' );
     $self->render_file( 'builder/MyBuilder.pm', 'Minimum/builder/MyBuilder.pm' );
-    
+
     $self->create_cpanfile({
         'HTML::FillInForm::Lite'          => '1.11',
         'Time::Piece'                     => '1.20',
@@ -46,7 +45,7 @@ sub run {
         'Crypt::CBC'                      => '0',
         'Crypt::Rijndael'                 => '0',
     });
-    
+
     # static files
     $self->write_file("static/img/.gitignore", '');
     $self->write_file("static/robots.txt", '');
@@ -54,7 +53,7 @@ sub run {
     $self->render_file("static/js/script.js",   "Akimacho/static/js/script.js");
     $self->render_file("static/css/style.css", "Akimacho/static/css/style.css");
     $self->render_file('db/.gitignore', 'Basic/db/dot.gitignore');
-    
+
     # configuration files
     $self->render_file('config/base.pl', "Akimacho/config/base.pl");
     for my $env (qw(development production test)) {
@@ -116,6 +115,5 @@ And then, run your application server:
 --------------------------------------------------------------
 ...
 }
-
 
 1;
