@@ -2,7 +2,8 @@ Build.PL
 Changes
 lib/Amon2/Setup/Flavor/Akimacho.pm
 MANIFEST			This list of files
-README
+README.md
+Akimacho
 t/00-load.t
 t/manifest.t
 t/pod-coverage.t
